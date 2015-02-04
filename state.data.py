@@ -15,7 +15,7 @@ def state_data(token, variables, year = 2010, state = "*", survey = "sf1"):
   r = map(lambda i: requests.get(i), complete_url) # make an API call to each complete_url
   data = map(lambda i: i.json(), r)
   df = pd.DataFrame(dict(zip(*v)) for v in data)
-#  print df
+# print df
   print complete_url
 
 state_data(token = mytoken, state = "*", variables = ["P0010001", "P0010001"])
